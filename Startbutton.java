@@ -16,7 +16,7 @@ public class Startbutton extends Actor
         setImage(start);
         start.scale(200, 100);
     }
-    
+    //Start the game
     public void act(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(Greenfoot.mouseClicked(this)){
