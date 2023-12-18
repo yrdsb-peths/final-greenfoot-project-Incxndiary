@@ -13,17 +13,14 @@ public class Gametank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage tankbody = new GreenfootImage("images/tank_idle/tile000.png");
-    GreenfootImage tankbodyleft = new GreenfootImage("images/tank_idle/tile000.png");
     
-    String facing = "right";
     int leftSpeed = -2;
     int rightSpeed = 2;
     public Gametank(){
         
-        tankbodyleft.mirrorVertically();
-        tankbodyleft.scale(50, 65);
         setRotation(90);
         tankbody.scale(50, 65);
+        setImage(tankbody);
     }
     SimpleTimer animationTimer = new SimpleTimer();
     SimpleTimer speed = new SimpleTimer();
@@ -45,29 +42,13 @@ public class Gametank extends Actor
         }
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX() + leftSpeed, getY());
-            
-            facing = "left";
+            tankbody.rotate(-10);
         }
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + rightSpeed, getY());
-            
-            facing = "right";
+            tankbody.rotate(10);
         }
         
-        animateTank();
         
     }
-    public void animateTank(){
-        if(animationTimer.millisElapsed() < 500){
-            return;
-        }
-        animationTimer.mark();
-        if(facing.equals("right")){
-            setImage(tankbody);
-        }else{
-            setImage(tankbodyleft);
-        }
-        
-    }
-    
 }
