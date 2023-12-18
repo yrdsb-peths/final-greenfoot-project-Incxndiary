@@ -41,12 +41,12 @@ public class Gametank extends Actor
         
         }
         if(Greenfoot.isKeyDown("a")){
-            setLocation(getX() + leftSpeed, getY());
-            tankbody.rotate(-10);
+            
+            setRotation(getRotation() - 3);
         }
         if(Greenfoot.isKeyDown("d")){
-            setLocation(getX() + rightSpeed, getY());
-            tankbody.rotate(10);
+            
+            setRotation(getRotation() + 3);
         }
         
         
