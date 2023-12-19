@@ -18,8 +18,8 @@ public class Gametank extends Actor
     int rightSpeed = 2;
     public Gametank(){
         
-        setRotation(90);
-        tankbody.scale(50, 65);
+        setRotation(90); 
+        tankbody.scale(65, 50);
         setImage(tankbody);
     }
     SimpleTimer animationTimer = new SimpleTimer();
@@ -32,13 +32,11 @@ public class Gametank extends Actor
             rightSpeed = 2;
         }
         if(Greenfoot.isKeyDown("w")){
-            move(rightSpeed);
             
+            move(rightSpeed);
         }
         if(Greenfoot.isKeyDown("s")){
             
-            
-            getRotation();
             move(leftSpeed);
         }
         if(Greenfoot.isKeyDown("a")){
