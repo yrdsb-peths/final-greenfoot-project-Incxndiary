@@ -20,6 +20,10 @@ public class MyWorld extends World
         
         Gametank tank = new Gametank();
         Tankshoot tanks = new Tankshoot();
+        Enemytank enemy = new Enemytank();
+        Enemyshoot enemys = new Enemyshoot();
+        addObject(enemy, 500, 200);
+        addObject(enemys, enemy.getX(), enemy.getY());
         addObject(tank, 300, 200);
         addObject(tanks, 300, 200);
     }
