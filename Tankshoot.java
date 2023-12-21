@@ -17,7 +17,7 @@ public class Tankshoot extends Actor
     MouseInfo mouse = Greenfoot.getMouseInfo();
     public Tankshoot(){
         setImage(tankshoot);
-        tankshoot.scale(25,60);
+        tankshoot.scale(60,25);
         
     }
     public void act()

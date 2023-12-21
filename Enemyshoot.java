@@ -17,11 +17,12 @@ public class Enemyshoot extends Actor
     private int buffer;
     public Enemyshoot(){
         setImage(enemyshoot);
-        enemyshoot.scale(25,60);
+        enemyshoot.scale(60,25);
     }
     public void act()
     {
         turntotank();
+        
     }
     public void location(){
         int tankX = ((Enemytank) getWorld().getObjects(Enemytank.class).get(0)).getX();
