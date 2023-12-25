@@ -16,8 +16,9 @@ public class Bullet extends Actor
     public Bullet(){
         setImage(bullet);
     }
+    Tankshoot barrel = new Tankshoot();
     public void act()
     {
-        // Add your action code here.
+        setRotation(barrel.getRotation());;
     }
 }

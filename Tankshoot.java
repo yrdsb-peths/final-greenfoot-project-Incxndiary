@@ -22,10 +22,20 @@ public class Tankshoot extends Actor
     }
     public void act()
     {
+        turnToMouse();
+        location();
+        shoot();
+    }
+    public void turnToMouse(){
+        MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null){
             turnTowards(mouse.getX(), mouse.getY());
         }
-        location();
+    }
+    public void shoot(){
+        if(Greenfoot.mouseClicked(null)){
+            getWorld().addObject(new Bullet(), getX(), getY());
+        }
     }
     public void location(){
         int tankX = ((Gametank) getWorld().getObjects(Gametank.class).get(0)).getX();

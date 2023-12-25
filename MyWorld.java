@@ -22,7 +22,7 @@ public class MyWorld extends World
         Tankshoot tanks = new Tankshoot();
         Enemytank enemy = new Enemytank();
         Enemyshoot enemys = new Enemyshoot();
-        int x = Greenfoot.getRandomNumber(600);
+        int x = Greenfoot.getRandomNumber(300) + 300;
         int y = Greenfoot.getRandomNumber(400);
         addObject(enemy, x, y);
         addObject(enemys, enemy.getX(), enemy.getY());
