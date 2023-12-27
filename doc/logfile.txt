@@ -20,13 +20,16 @@ C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\doc
 windows-1252
 -charset
 windows-1252
-C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\Titlescreen.java
+C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\SmoothMover.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\Titlescreen.java...
-C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\Titlescreen.java:31: error: ')' expected
-            if(is
-                 ^
-C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\Titlescreen.java:32: error: illegal start of statement
-        }
-        ^
-2 errors
+Loading source file C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\SmoothMover.java...
+Constructing Javadoc information...
+warning: unknown enum constant Tag.Any
+  reason: class file for threadchecker.Tag not found
+warning: unknown enum constant Tag.Any
+Standard Doclet version 17.0.4.1+1
+Building tree for all the packages and classes...
+Generating C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\doc\SmoothMover.html...
+Generating C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\doc\package-summary.html...
+Generating C:\Users\User\Documents\GitHub\final-greenfoot-project-Incxndiary\doc\index.html...
+2 warnings
