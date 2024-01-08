@@ -34,8 +34,9 @@ public class Tankshoot extends Actor
     }
     public void shoot(){
         if(Greenfoot.mouseClicked(null)){
-            getWorld().addObject(new Bullet(), getX(), getY());
-            
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
         }
     }
     public void location(){

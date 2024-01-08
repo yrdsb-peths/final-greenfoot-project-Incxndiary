@@ -20,5 +20,9 @@ public class Bullet extends SmoothMover
     public void act()
     {
         move(10);
+        MyWorld world = new MyWorld();
+        if(getY() == world.getHeight() || getY() == 0){
+            world.removeObject(this);
+        }
     }
 }
