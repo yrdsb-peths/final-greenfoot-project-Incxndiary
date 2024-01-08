@@ -21,8 +21,10 @@ public class Bullet extends SmoothMover
     {
         move(10);
         MyWorld world = new MyWorld();
-        if(getY() == world.getHeight() || getY() == 0){
-            world.removeObject(this);
+        if(getY() == getWorld().getHeight()-1) getWorld().removeObject(this);
+        if(getY() <= 0) getWorld().removeObject(this);
+        if(getX() == getWorld().getWidth()-1) getWorld().removeObject(this);
+        if(getX() <= 0) getWorld().removeObject(this);
         }
-    }
+    
 }
