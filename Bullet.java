@@ -21,10 +21,31 @@ public class Bullet extends SmoothMover
     {
         move(10);
         MyWorld world = new MyWorld();
-        if(getY() == getWorld().getHeight()-1) getWorld().removeObject(this);
-        if(getY() <= 0) getWorld().removeObject(this);
-        if(getX() == getWorld().getWidth()-1) getWorld().removeObject(this);
-        if(getX() <= 0) getWorld().removeObject(this);
+        selfDestruct();
+        if(removeObject()){
+            getWorld().removeObject(this);
         }
-    
+        }
+    public boolean removeObject(){
+        if(getY() == getWorld().getHeight()-1){
+            return true;
+        }
+        if(getX() == getWorld().getWidth()-1){
+            return true;
+        }
+        if(getY() <= 0){
+            return true;
+        }
+        if(getX() <= 0){
+            return true;
+        }
+        return false;
+        
+    }
+    public void selfDestruct(){
+        if(isTouching(Normalenemytank.class) && isTouching(Normalenemy.class)){
+            removeTouching(Normalenemytank.class);
+            removeTouching(Normalenemy.class);
+        }
+    }
 }
