@@ -17,7 +17,7 @@ public class Enemy extends Actor
     
     public void act()
     {
-        turntotank();
+        
         
     }
     public void location(){

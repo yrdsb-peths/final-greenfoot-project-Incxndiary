@@ -1,31 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class Enemybullet here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends SmoothMover
+public class Enemybullet extends SmoothMover
 {
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * Act - do whatever the Enemybullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage bullet = new GreenfootImage("images/Bullet.png");
-    public Bullet(){
-        setImage(bullet);
+    GreenfootImage enemybullet = new GreenfootImage("images/Bullet.png");
+    public Enemybullet(){
+        setImage(enemybullet);
     }
-    
     public void act()
     {
-        move(100);
+        move(10);
         MyWorld world = new MyWorld();
-        selfDestruct();
         if(removeObject()){
             getWorld().removeObject(this);
         }
-        }
+        selfDestruct();
+    }
     public boolean removeObject(){
         if(getY() == getWorld().getHeight()-1){
             return true;
@@ -43,10 +42,8 @@ public class Bullet extends SmoothMover
         
     }
     public void selfDestruct(){
-        if(isTouching(Normalenemy.class) && isTouching(Normalenemytank.class)){
-            
-            removeTouching(Normalenemy.class);
-            removeTouching(Normalenemytank.class);
+        if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
+            getWorld().removeObject(this);
             
         }
     }
