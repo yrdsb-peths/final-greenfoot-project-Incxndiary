@@ -12,9 +12,10 @@ public class Normalenemytank extends Enemy
      * Act - do whatever the Normalenemytank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */ 
-    int health = 100;
+    
     GreenfootImage enemytank = new GreenfootImage("images/tank_idle/tile003.png");
     public Normalenemytank(){
+        health = 100;
         setRotation(90);
         enemytank.scale(65,50);
         setImage(enemytank);
@@ -22,5 +23,12 @@ public class Normalenemytank extends Enemy
     public void act()
     {
         collision();
+        if(dead()){
+            
+            
+        }
+    }
+    private void shoot(){
+        
     }
 }
