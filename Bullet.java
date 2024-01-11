@@ -21,7 +21,7 @@ public class Bullet extends SmoothMover
     {
         move(100);
         MyWorld world = new MyWorld();
-        selfDestruct();
+        
         if(removeObject()){
             getWorld().removeObject(this);
         }
@@ -42,12 +42,5 @@ public class Bullet extends SmoothMover
         return false;
         
     }
-    public void selfDestruct(){
-        if(isTouching(Normalenemy.class) && isTouching(Normalenemytank.class)){
-            
-            removeTouching(Normalenemy.class);
-            removeTouching(Normalenemytank.class);
-            
-        }
-    }
+    
 }

@@ -21,6 +21,6 @@ public class Normalenemytank extends Enemy
     }
     public void act()
     {
-        // Add your action code here.
+        collision();
     }
 }

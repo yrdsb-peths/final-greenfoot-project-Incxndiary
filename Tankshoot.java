@@ -33,7 +33,7 @@ public class Tankshoot extends Actor
         }
     }
     public void shoot(){
-        if(Greenfoot.mouseClicked(null)){
+        if(Greenfoot.mousePressed(null)){
             Bullet bullet = new Bullet();
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());

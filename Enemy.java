@@ -33,4 +33,19 @@ public class Enemy extends Actor
             turnTowards(tankX, tankY);
         }
     }
+    public void collision(){
+        Actor normal = getOneIntersectingObject(Bullet.class);
+        if(normal != null){
+            health -= 5;
+            if(health <= 0){
+                getWorld().removeObject(this);
+            }
+        }
+    }
+    public boolean dead(){
+        if(health <=0){
+            return true;
+        }
+        return false;
+    }
 }

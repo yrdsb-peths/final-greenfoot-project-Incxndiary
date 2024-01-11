@@ -18,12 +18,17 @@ public class Enemybullet extends SmoothMover
     }
     public void act()
     {
-        move(10);
+        move(20);
         MyWorld world = new MyWorld();
         if(removeObject()){
             getWorld().removeObject(this);
+            
         }
-        selfDestruct();
+        else if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
+            getWorld().removeObject(this);
+            
+        }
+        
     }
     public boolean removeObject(){
         if(getY() == getWorld().getHeight()-1){
@@ -41,10 +46,5 @@ public class Enemybullet extends SmoothMover
         return false;
         
     }
-    public void selfDestruct(){
-        if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
-            getWorld().removeObject(this);
-            
-        }
-    }
+    
 }
