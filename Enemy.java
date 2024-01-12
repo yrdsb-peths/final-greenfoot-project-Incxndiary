@@ -44,9 +44,6 @@ public class Enemy extends Actor
         }
     }
     public boolean dead(){
-        if(health < 1){
-            return true;
-        }
-        return false;
+        return health < 1;
     }
 }
