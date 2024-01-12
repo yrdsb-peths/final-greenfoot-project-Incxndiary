@@ -14,20 +14,28 @@ public class Semiautotank extends Enemy
      */
     GreenfootImage semi = new GreenfootImage("images/Semitank.png");
     public Semiautotank(){
+        counter = 0;
         health = 100;
         setImage(semi);
+        reload = 3;
     }
     public void act()
     {
+        
         if(health > 0){
             turntotank();
             collision();
+            shoot();
             if(dead()){
                 getWorld().removeObject(this);
             }
         }
     }
     private void shoot(){
-        
+        if(Greenfoot.mouseClicked(null)){
+            Enemybullet bullet = new Enemybullet(getRotation());
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
+        }
     }
 }

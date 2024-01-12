@@ -14,15 +14,16 @@ public class Enemy extends Actor
      */
     public int health;
     public int buffer;
-    
+    public int counter;
+    public int reload;
     public void act()
     {
         
         
     }
     public void location(){
-        int tankX = ((Normalenemy) getWorld().getObjects(Normalenemy.class).get(0)).getX();
-        int tankY = ((Normalenemy) getWorld().getObjects(Normalenemy.class).get(0)).getY();
+        int tankX = ((Semiautotank) getWorld().getObjects(Semiautotank.class).get(0)).getX();
+        int tankY = ((Semiautotank) getWorld().getObjects(Semiautotank.class).get(0)).getY();
         setLocation(tankX, tankY);
     }
     public void turntotank(){
@@ -36,7 +37,7 @@ public class Enemy extends Actor
     public void collision(){
         Actor normal = getOneIntersectingObject(Bullet.class);
         if(normal != null){
-            health -= 100;
+            health -= 50;
             if(health <= 0){
                 getWorld().removeObject(this);
             }

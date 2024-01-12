@@ -13,7 +13,8 @@ public class Enemybullet extends SmoothMover
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage enemybullet = new GreenfootImage("images/Bullet.png");
-    public Enemybullet(){
+    public Enemybullet(int direction){
+        setRotation(direction);
         setImage(enemybullet);
     }
     public void act()
@@ -31,6 +32,7 @@ public class Enemybullet extends SmoothMover
         
     }
     public boolean removeObject(){
+        
         if(getY() == getWorld().getHeight()-1){
             return true;
         }
