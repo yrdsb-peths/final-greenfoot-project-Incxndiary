@@ -15,11 +15,7 @@ public class Enemy extends Actor
     public int health;
     public int buffer;
     
-    public void act()
-    {
-        
-        
-    }
+    
     public void location(){
         int tankX = ((Normalenemy) getWorld().getObjects(Normalenemy.class).get(0)).getX();
         int tankY = ((Normalenemy) getWorld().getObjects(Normalenemy.class).get(0)).getY();
@@ -43,9 +39,6 @@ public class Enemy extends Actor
         }
     }
     public boolean dead(){
-        if(health < 1){
-            return true;
-        }
-        return false;
+        return health < 1;
     }
 }

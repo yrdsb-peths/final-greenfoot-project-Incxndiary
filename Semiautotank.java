@@ -19,12 +19,12 @@ public class Semiautotank extends Enemy
     }
     public void act()
     {
-        if(health > 0){
+
+        if(!dead()){
             turntotank();
             collision();
-            if(dead()){
-                getWorld().removeObject(this);
-            }
+        }else{
+            getWorld().removeObject(this);
         }
     }
     private void shoot(){
