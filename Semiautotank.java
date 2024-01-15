@@ -31,6 +31,8 @@ public class Semiautotank extends Enemy
         }
     }
     private void shoot(){
+        counter++;
+        
         if(Greenfoot.mouseClicked(null)){
             Enemybullet bullet = new Enemybullet(getRotation());
             getWorld().addObject(bullet, getX(), getY());
