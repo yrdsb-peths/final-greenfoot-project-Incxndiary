@@ -12,6 +12,7 @@ public class Enemy extends Actor
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public int score;
     public int health;
     public int buffer;
     public int counter;

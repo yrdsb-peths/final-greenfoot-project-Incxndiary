@@ -13,11 +13,14 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    public int score = 0;
+    Label scoreLabel;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        
+        scoreLabel = new Label("Score:" + score, 50);
+        addObject(scoreLabel, 25, 25);
         Gametank tank = new Gametank();
         Tankshoot tanks = new Tankshoot();
         Semiautotank semi = new Semiautotank();
@@ -26,7 +29,11 @@ public class MyWorld extends World
         addObject(semi, x, y);
         addObject(tank, 0, 200);
         addObject(tanks, 0, 200);
+        increaseScore();
+    }
+    public void increaseScore(){
+        score += 100;
+        scoreLabel.setValue(score);
         
     }
-    
 }
