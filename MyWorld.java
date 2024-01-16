@@ -29,8 +29,8 @@ public class MyWorld extends World
         addObject(semi, x, y);
         addObject(tank, 0, 200);
         addObject(tanks, 0, 200);
-        increaseScore();
     }
+    
     public void increaseScore(){
         score += 100;
         scoreLabel.setValue(score);
