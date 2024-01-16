@@ -42,5 +42,11 @@ public class Bullet extends SmoothMover
         return false;
         
     }
-    
+    public void increaseScore(){
+        if(isTouching(Semiautotank.class)){
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
+        }
+        
+    }
 }

@@ -19,7 +19,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        scoreLabel = new Label("Score:" + score, 50);
+        scoreLabel = new Label(score, 50);
         addObject(scoreLabel, 25, 25);
         Gametank tank = new Gametank();
         Tankshoot tanks = new Tankshoot();

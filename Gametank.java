@@ -16,6 +16,8 @@ public class Gametank extends Actor
     
     int leftSpeed = -2;
     int rightSpeed = 2;
+    public int score = 0;
+    int myHealth = 100;
     public Gametank(){
         
         setRotation(90); 
@@ -47,7 +49,19 @@ public class Gametank extends Actor
             
             setRotation(getRotation() + 3);
         }
+        collision();
         
+    }
+    public void collision(){
+        Actor normal = getOneIntersectingObject(Enemybullet.class);
+        
+        if(normal != null){
+            myHealth =- 10;
+            System.out.println(myHealth);
+            
+        }
+    }
+    public void inreaseScore(){
         
     }
 }

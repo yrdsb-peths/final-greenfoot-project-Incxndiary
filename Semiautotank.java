@@ -30,7 +30,6 @@ public class Semiautotank extends Enemy
         }else{
             getWorld().removeObject(this);
             MyWorld world = (MyWorld) getWorld();
-
         }
         shoot();
     }

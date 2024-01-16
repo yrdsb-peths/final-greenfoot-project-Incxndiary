@@ -19,7 +19,7 @@ public class Enemybullet extends SmoothMover
     }
     public void act()
     {
-        move(30);
+        move(50);
         MyWorld world = new MyWorld();
         if(removeObject()){
             getWorld().removeObject(this);

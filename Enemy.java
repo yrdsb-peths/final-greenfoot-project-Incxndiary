@@ -38,7 +38,8 @@ public class Enemy extends Actor
     public void collision(){
         Actor normal = getOneIntersectingObject(Bullet.class);
         if(normal != null){
-            health -= 50;
+            health -= 25;
+            System.out.println(health);
             if(health <= 0){
                 getWorld().removeObject(this);
             }
