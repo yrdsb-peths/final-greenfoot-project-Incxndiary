@@ -19,21 +19,19 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        scoreLabel = new Label(score, 50);
-        addObject(scoreLabel, 25, 25);
         Gametank tank = new Gametank();
         Tankshoot tanks = new Tankshoot();
+        scoreLabel = new Label(score, 50);
+        addObject(scoreLabel, 25, 25);
         Semiautotank semi = new Semiautotank();
         int x = Greenfoot.getRandomNumber(300) + 300;
         int y = Greenfoot.getRandomNumber(400);
         addObject(semi, x, y);
         addObject(tank, 0, 200);
         addObject(tanks, 0, 200);
-        increaseScore();
     }
     public void increaseScore(){
         score += 100;
         scoreLabel.setValue(score);
-        
     }
 }

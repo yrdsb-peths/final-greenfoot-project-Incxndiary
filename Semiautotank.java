@@ -22,16 +22,19 @@ public class Semiautotank extends Enemy
     }
     public void act()
     {
-
-
-        if(!dead()){
+        shoot();
+        if(dead()){
+            MyWorld score = (MyWorld) getWorld();
+            System.out.println("dead");
+            score.increaseScore();
+            getWorld().removeObject(this);
+            Greenfoot.setWorld(score);
+        }else{
             turntotank();
             collision();
-        }else{
-            getWorld().removeObject(this);
-            MyWorld world = (MyWorld) getWorld();
+
+
         }
-        shoot();
     }
     private void shoot(){
         counter++;
