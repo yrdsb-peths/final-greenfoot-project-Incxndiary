@@ -10,7 +10,6 @@ public class Score extends World
 {
     public int score = 0;
     Label scoreLabel;
-    
     /**
      * Constructor for objects of class Score.
      * 
@@ -21,9 +20,5 @@ public class Score extends World
         super(600, 400, 1); 
         scoreLabel = new Label(score, 50);
         addObject(scoreLabel, 25, 25);
-    }
-    public void increaseScore(){
-        score += 100;
-        scoreLabel.setValue(score);
     }
 }

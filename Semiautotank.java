@@ -13,6 +13,7 @@ public class Semiautotank extends Enemy
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage semi = new GreenfootImage("images/Semitank.png");
+    //setting the normal tanks image
     public Semiautotank(){
         score = 100;
         counter = 0;
@@ -22,10 +23,11 @@ public class Semiautotank extends Enemy
     }
     public void act()
     {
-        shoot();
+        //Spawns the bullet
+        spawnbullet();
+        //Checks of the tanks dead, otherwise, turntotank() and collision()
         if(dead()){
             MyWorld score = (MyWorld) getWorld();
-            System.out.println("dead");
             score.increaseScore();
             getWorld().removeObject(this);
             Greenfoot.setWorld(score);
@@ -36,7 +38,8 @@ public class Semiautotank extends Enemy
 
         }
     }
-    private void shoot(){
+    //Class to set the spawns of a normal bullet
+    private void spawnbullet(){
         counter++;
         if(counter > reload){
             Enemybullet bullet = new Enemybullet(getRotation());

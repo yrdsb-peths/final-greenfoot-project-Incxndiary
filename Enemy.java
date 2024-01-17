@@ -21,13 +21,7 @@ public class Enemy extends Actor
     {
 
     }
-
-    public void location(){
-        int tankX = ((Semiautotank) getWorld().getObjects(Semiautotank.class).get(0)).getX();
-        int tankY = ((Semiautotank) getWorld().getObjects(Semiautotank.class).get(0)).getY();
-        setLocation(tankX, tankY);
-    }
-
+    //turn towards the game tank
     public void turntotank(){
         int tankX = ((Gametank) getWorld().getObjects(Gametank.class).get(0)).getX();
         int tankY = ((Gametank) getWorld().getObjects(Gametank.class).get(0)).getY();
@@ -36,12 +30,12 @@ public class Enemy extends Actor
             turnTowards(tankX, tankY);
         }
     }
-
+    //Checks if the bullet intersects/hits the game tank
     public void collision(){
 
         Actor bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if(bullet != null){
-            health -= 10;
+            health -= 20;
 
         }
         if(health <= -1){
@@ -49,7 +43,7 @@ public class Enemy extends Actor
 
         }
     }
-
+    //returns if dead
     public boolean dead(){
         return health <= 0;
     }

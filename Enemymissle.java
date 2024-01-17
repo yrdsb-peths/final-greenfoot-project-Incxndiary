@@ -1,33 +1,41 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class Enemymissle here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends SmoothMover
+public class Enemymissle extends SmoothMover
 {
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * Act - do whatever the Enemymissle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage bullet = new GreenfootImage("images/Bullet.png");
-    public Bullet(){
-        setImage(bullet);
+    //Sets the image of the missle
+    GreenfootImage missle = new GreenfootImage("images/Missle.png");
+    public Enemymissle(int direction){
+        setRotation(direction);
+        missle.scale(100, 20);
+        setImage(missle);
     }
     
     public void act()
     {
-        move(100);
+        //Speed of missle
+        move(30);
         MyWorld world = new MyWorld();
-        
+        //Checks if it hits "good" tank
         if(removeObject()){
             getWorld().removeObject(this);
         }
+        else if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
+            getWorld().removeObject(this);
         }
-    //Checks if the bullet is out of bounds
+    }
+    //Removes when touches the boundary
     public boolean removeObject(){
+        
         if(getY() == getWorld().getHeight()-1){
             return true;
         }
@@ -41,14 +49,6 @@ public class Bullet extends SmoothMover
             return true;
         }
         return false;
-        
-    }
-
-    public void increaseScore(){
-        if(isTouching(Semiautotank.class)){
-            Score world = (Score) getWorld();
-            world.increaseScore();
-        }
         
     }
 }

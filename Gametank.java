@@ -13,7 +13,7 @@ public class Gametank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage tankbody = new GreenfootImage("images/tank_idle/tile000.png");
-    
+    //Set image of game tank
     int leftSpeed = -2;
     int rightSpeed = 2;
     public int score = 0;
@@ -29,6 +29,7 @@ public class Gametank extends Actor
     
     public void act()
     {
+        //Movement
         if(speed.millisElapsed() > 2500){
             leftSpeed = -2;
             rightSpeed = 2;
@@ -52,16 +53,14 @@ public class Gametank extends Actor
         collision();
         
     }
+    //Checks if enemy bullet hits the tank
     public void collision(){
         Actor normal = getOneIntersectingObject(Enemybullet.class);
         
         if(normal != null){
             myHealth =- 10;
-            System.out.println(myHealth);
             
         }
     }
-    public void inreaseScore(){
-        
-    }
+
 }
