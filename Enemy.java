@@ -17,6 +17,7 @@ public class Enemy extends Actor
     public int buffer;
     public int counter;
     public int reload;
+    public int fizzOut;
     public void act()
     {
 
@@ -47,4 +48,6 @@ public class Enemy extends Actor
     public boolean dead(){
         return health <= 0;
     }
+    
+
 }

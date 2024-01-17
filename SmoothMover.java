@@ -13,9 +13,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  */
 public abstract class SmoothMover extends Actor
 {
+    public int counter = 0;
+    public int fizzOut;
     private double exactX;
     private double exactY;
-
+    
     /**
      * Move forward by the specified distance.
      * (Overrides the method in Actor).

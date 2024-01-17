@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Missle extends Enemy
+public class Missile extends Enemy
 {
     /**
      * Act - do whatever the Rocketeer wants to do. This method is called whenever
@@ -14,12 +14,12 @@ public class Missle extends Enemy
      */
     GreenfootImage missle = new GreenfootImage ("images/Missletank.png");
     //Sets charactersitics of missle tank
-    public Missle(){
+    public Missile(){
         score = 200;
         counter = 0;
         health = 200;
         setImage(missle);
-        reload = 200;
+        reload = 150;
     }
     public void act()
     {

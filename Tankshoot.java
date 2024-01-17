@@ -12,6 +12,8 @@ public class Tankshoot extends Actor
      * Act - do whatever the Tankshoot wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    //Image of the barell
+    private int counter = 0;
     GreenfootImage tankshoot = new GreenfootImage("images/tank_idle/tile006.png");
     Gametank tank = new Gametank();
     MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -26,6 +28,7 @@ public class Tankshoot extends Actor
         location();
         shoot();
     }
+    //Turn towards mouse
     public void turnToMouse(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null){
@@ -33,7 +36,10 @@ public class Tankshoot extends Actor
         }
     }
     public void shoot(){
-        if(Greenfoot.mousePressed(null)){
+        //Buffer time
+        counter++;
+        if(Greenfoot.mousePressed(null) && counter > 20){
+            counter = 0;
             Bullet bullet = new Bullet();
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());

@@ -15,6 +15,7 @@ public class Enemymissle extends SmoothMover
     //Sets the image of the missle
     GreenfootImage missle = new GreenfootImage("images/Missle.png");
     public Enemymissle(int direction){
+        fizzOut = 10;
         setRotation(direction);
         missle.scale(100, 20);
         setImage(missle);
@@ -25,28 +26,14 @@ public class Enemymissle extends SmoothMover
         //Speed of missle
         move(30);
         MyWorld world = new MyWorld();
-        //Checks if it hits "good" tank
-        if(removeObject()){
+        fizz();
+    }
+    //Fizzes the bullet out or out of bounds
+    public void fizz(){
+        Actor missile = getOneIntersectingObject(Enemymissle.class);
+        counter++;
+        if(counter > fizzOut || missile != null){
             getWorld().removeObject(this);
         }
-        
-    }
-    //Removes when touches the boundary
-    public boolean removeObject(){
-        
-        if(getY() == getWorld().getHeight()-1){
-            return true;
-        }
-        if(getX() == getWorld().getWidth()-1){
-            return true;
-        }
-        if(getY() <= 0){
-            return true;
-        }
-        if(getX() <= 0){
-            return true;
-        }
-        return false;
-        
     }
 }

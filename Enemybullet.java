@@ -15,6 +15,7 @@ public class Enemybullet extends SmoothMover
     //Sets the characteristics of the bullet
     GreenfootImage enemybullet = new GreenfootImage("images/Bullet.png");
     public Enemybullet(int direction){
+        fizzOut = 7;
         setRotation(direction);
         setImage(enemybullet);
     }
@@ -24,31 +25,18 @@ public class Enemybullet extends SmoothMover
         //Speed
         move(50);
         //Checks if it touches the "good" tank
+        fizz();
         MyWorld world = new MyWorld();
-        if(removeObject()){
+        
+    }
+
+    //Fizzes the bullet out
+    public void fizz(){
+        Actor object = getOneIntersectingObject(Enemybullet.class);
+        counter++;
+        //Removes bullet if it touches border
+        if(counter > fizzOut || object != null){
             getWorld().removeObject(this);
-            
         }
-        
-        
     }
-    //Removes bullet if it touches border
-    public boolean removeObject(){
-        
-        if(getY() == getWorld().getHeight()-1){
-            return true;
-        }
-        if(getX() == getWorld().getWidth()-1){
-            return true;
-        }
-        if(getY() <= 0){
-            return true;
-        }
-        if(getX() <= 0){
-            return true;
-        }
-        return false;
-        
-    }
-    
 }

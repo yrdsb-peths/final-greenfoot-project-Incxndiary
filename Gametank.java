@@ -14,7 +14,8 @@ public class Gametank extends Actor
      */
     GreenfootImage tankbody = new GreenfootImage("images/tank_idle/tile000.png");
     //Set image of game tank
-    private int myHealth;
+
+    public int myHealth;
     private int leftSpeed = -2;
     private int rightSpeed = 2;
     public int score = 0;
@@ -31,6 +32,10 @@ public class Gametank extends Actor
         if(myHealth > 0){
             moveAround();
             collision();
+        }
+        else{
+            Score world = new Score();
+            Greenfoot.setWorld(world);
         }
     }
     //Checks if enemy bullet hits the ta
@@ -69,6 +74,8 @@ public class Gametank extends Actor
             myHealth -= 20;
             getWorld().removeObject(missile);
         }
-        System.out.println(myHealth);
+    }
+    public int getHealth(){
+        return myHealth;
     }
 }
