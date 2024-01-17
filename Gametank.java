@@ -14,53 +14,61 @@ public class Gametank extends Actor
      */
     GreenfootImage tankbody = new GreenfootImage("images/tank_idle/tile000.png");
     //Set image of game tank
-    int leftSpeed = -2;
-    int rightSpeed = 2;
+    private int myHealth;
+    private int leftSpeed = -2;
+    private int rightSpeed = 2;
     public int score = 0;
-    int myHealth = 100;
     public Gametank(){
-        
+        myHealth = 200;
         setRotation(90); 
         tankbody.scale(65, 50);
         setImage(tankbody);
     }
-    SimpleTimer animationTimer = new SimpleTimer();
     SimpleTimer speed = new SimpleTimer();
     
     public void act()
     {
-        //Movement
-        if(speed.millisElapsed() > 2500){
-            leftSpeed = -2;
-            rightSpeed = 2;
+        if(myHealth > 0){
+            moveAround();
+            collision();
         }
+    }
+    //Checks if enemy bullet hits the ta
+    //Movement
+    public void moveAround(){
+        if(speed.millisElapsed() > 2500){
+                leftSpeed = -2;
+                rightSpeed = 2;
+            }
         if(Greenfoot.isKeyDown("w")){
             
             move(rightSpeed);
         }
         if(Greenfoot.isKeyDown("s")){
-            
+                
             move(leftSpeed);
         }
         if(Greenfoot.isKeyDown("a")){
-            
+               
             setRotation(getRotation() - 3);
         }
         if(Greenfoot.isKeyDown("d")){
-            
+               
             setRotation(getRotation() + 3);
         }
-        collision();
-        
     }
-    //Checks if enemy bullet hits the tank
     public void collision(){
         Actor normal = getOneIntersectingObject(Enemybullet.class);
-        
+        Actor missile = getOneIntersectingObject(Enemymissle.class);
         if(normal != null){
-            myHealth =- 10;
-            
-        }
-    }
 
+            myHealth -= 10;
+            getWorld().removeObject(normal);
+        }
+        if(missile != null){
+            myHealth -= 20;
+            getWorld().removeObject(missile);
+        }
+        System.out.println(myHealth);
+    }
 }

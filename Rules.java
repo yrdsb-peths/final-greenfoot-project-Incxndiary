@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rules extends World
 {
     Label rules = new Label("Use W, A, S, D keys to move", 50);
-    Label rules1 = new Label("Press C to shoot", 50);
+    Label rules1 = new Label("Left click to shoot", 50);
     
     /**
      * Constructor for objects of class rules.

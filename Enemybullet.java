@@ -29,10 +29,7 @@ public class Enemybullet extends SmoothMover
             getWorld().removeObject(this);
             
         }
-        else if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
-            getWorld().removeObject(this);
-            
-        }
+        
         
     }
     //Removes bullet if it touches border

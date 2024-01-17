@@ -29,9 +29,7 @@ public class Enemymissle extends SmoothMover
         if(removeObject()){
             getWorld().removeObject(this);
         }
-        else if(isTouching(Gametank.class) && isTouching(Tankshoot.class)){
-            getWorld().removeObject(this);
-        }
+        
     }
     //Removes when touches the boundary
     public boolean removeObject(){

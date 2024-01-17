@@ -25,6 +25,7 @@ public class Bullet extends SmoothMover
         if(removeObject()){
             getWorld().removeObject(this);
         }
+        
         }
     //Checks if the bullet is out of bounds
     public boolean removeObject(){
@@ -44,11 +45,4 @@ public class Bullet extends SmoothMover
         
     }
 
-    public void increaseScore(){
-        if(isTouching(Semiautotank.class)){
-            Score world = (Score) getWorld();
-            world.increaseScore();
-        }
-        
-    }
 }
