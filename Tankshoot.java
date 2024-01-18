@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.GreenfootSound;
 
 /**
  * Write a description of class Tankshoot here.
@@ -17,11 +18,12 @@ public class Tankshoot extends Actor
     GreenfootImage tankshoot = new GreenfootImage("images/tank_idle/tile006.png");
     Gametank tank = new Gametank();
     MouseInfo mouse = Greenfoot.getMouseInfo();
+    GreenfootSound explosion = new GreenfootSound("sounds/Bulletexplosion.mp3");
     public Tankshoot(){
         setImage(tankshoot);
         tankshoot.scale(60,25);
         
-    }
+    }    
     public void act()
     {
         turnToMouse();
@@ -38,10 +40,11 @@ public class Tankshoot extends Actor
     public void shoot(){
         //Buffer time
         counter++;
-        if(Greenfoot.mousePressed(null) && counter > 20){
+        if(Greenfoot.mousePressed(null) && counter > 40){
             counter = 0;
             Bullet bullet = new Bullet();
             getWorld().addObject(bullet, getX(), getY());
+            explosion.play();
             bullet.setRotation(getRotation());
         }
     }

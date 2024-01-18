@@ -75,7 +75,5 @@ public class Gametank extends Actor
             getWorld().removeObject(missile);
         }
     }
-    public int getHealth(){
-        return myHealth;
-    }
+
 }
