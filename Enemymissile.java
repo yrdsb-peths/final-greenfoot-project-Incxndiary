@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Enemymissle extends SmoothMover
+public class Enemymissile extends SmoothMover
 {
     /**
      * Act - do whatever the Enemymissle wants to do. This method is called whenever
@@ -14,7 +14,7 @@ public class Enemymissle extends SmoothMover
      */
     //Sets the image of the missle
     GreenfootImage missle = new GreenfootImage("images/Missle.png");
-    public Enemymissle(int direction){
+    public Enemymissile(int direction){
         fizzOut = 10;
         setRotation(direction);
         missle.scale(100, 20);
@@ -30,7 +30,7 @@ public class Enemymissle extends SmoothMover
     }
     //Fizzes the bullet out or out of bounds
     public void fizz(){
-        Actor missile = getOneIntersectingObject(Enemymissle.class);
+        Actor missile = getOneIntersectingObject(Enemymissile.class);
         counter++;
         if(counter > fizzOut || missile != null){
             getWorld().removeObject(this);

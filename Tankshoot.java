@@ -45,6 +45,7 @@ public class Tankshoot extends Actor
             bullet.setRotation(getRotation());
         }
     }
+    //Finds the location of the gametank and sets itself on the (x,y) coordinates
     public void location(){
         int tankX = ((Gametank) getWorld().getObjects(Gametank.class).get(0)).getX();
         int tankY = ((Gametank) getWorld().getObjects(Gametank.class).get(0)).getY();

@@ -36,7 +36,7 @@ public class Enemy extends Actor
 
         Actor bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if(bullet != null){
-            health -= 20;
+            health -= 50;
 
         }
         if(health <= -1){

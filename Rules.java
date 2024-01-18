@@ -10,7 +10,7 @@ public class Rules extends World
 {
     Label rules = new Label("Use W, A, S, D keys to move", 50);
     Label rules1 = new Label("Left click to shoot", 50);
-    
+    //Creating the simple rules
     /**
      * Constructor for objects of class rules.
      * 

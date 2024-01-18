@@ -20,7 +20,7 @@ public class Gametank extends Actor
     private int rightSpeed = 2;
     public int score = 0;
     public Gametank(){
-        myHealth = 200;
+        myHealth = 100;
         setRotation(90); 
         tankbody.scale(65, 50);
         setImage(tankbody);
@@ -64,7 +64,7 @@ public class Gametank extends Actor
     }
     public void collision(){
         Actor normal = getOneIntersectingObject(Enemybullet.class);
-        Actor missile = getOneIntersectingObject(Enemymissle.class);
+        Actor missile = getOneIntersectingObject(Enemymissile.class);
         if(normal != null){
 
             myHealth -= 10;

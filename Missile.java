@@ -42,7 +42,7 @@ public class Missile extends Enemy
     private void spawnbullet(){
         counter++;
         if(counter > reload){
-            Enemymissle bullet = new Enemymissle(getRotation());
+            Enemymissile bullet = new Enemymissile(getRotation());
             getWorld().addObject(bullet, getX(), getY());
             bullet.setRotation(getRotation());
             counter = 0;

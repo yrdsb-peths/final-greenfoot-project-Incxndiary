@@ -19,7 +19,7 @@ public class MyWorld extends World
     SimpleTimer simple = new SimpleTimer();
     private int level = 1;
     public MyWorld()
-    {    
+    {   
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         Gametank tank = new Gametank();
@@ -34,10 +34,10 @@ public class MyWorld extends World
     }
     
     public void act(){
+
         increaseEnemy();
-        
     }
-    
+    //Couldn't get a fixed number of spawning of enemy tanks, so I controlled it a bit with the millElapsed() 
     public void increaseEnemy(){
         Semiautotank semi = new Semiautotank();
         int x = Greenfoot.getRandomNumber(300) + 300;
@@ -45,32 +45,26 @@ public class MyWorld extends World
         Missile missile = new Missile();
         int a = Greenfoot.getRandomNumber(300) + 300;
         int b = Greenfoot.getRandomNumber(200) + 100;
-        if(counter < level){
-            for(int i = 0; i < level; i++){
+        if(simple.millisElapsed() % 100 == 0){
+            addObject(semi, x, y);
+        }
+        if(simple.millisElapsed() % 200 == 0){
+            addObject(missile, a, b);
+        }
+        /*if(counter < level){
+            for(counter = 0; counter < level; counter++){
                 addObject(semi, x, y);
             }
-        }
-        
-        
-        /*if(simple.millisElapsed() > 1000){
-            if(counter < level){
-                for(int i = 0; i < level; i++){
-                    addObject(semi, x, y);
-                }
-                counter++;
-            }
             if(score == level*100){
+                counter = 0;
                 level++;
             }
-        }
-        if(score >= 1000){
-            if(counter < level){
-                addObject(missile, a, b);
-                counter++;
-            }
-            
+            System.out.println(score);
+            System.out.println(counter);
         }
         */
+            
+        
     }
     
     //Increases score for normal tank
