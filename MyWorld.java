@@ -24,7 +24,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         Gametank tank = new Gametank();
         Tankshoot tanks = new Tankshoot();
-        scoreLabel = new Label(score, 25);
+        scoreLabel = new Label(score, 50);
         addObject(scoreLabel, 25, 25);
         
         addObject(tank, 0, 200);
